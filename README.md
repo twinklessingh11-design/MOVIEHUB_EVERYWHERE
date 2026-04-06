@@ -1,4 +1,4 @@
-# 🎬 QuickShow — Movie Ticket Booking System
+# 🎬 Moviehub — Movie Ticket Booking System
 
 A full-stack MERN-based movie ticket booking platform with real-time seat locking, secure payments, and admin analytics.
 
