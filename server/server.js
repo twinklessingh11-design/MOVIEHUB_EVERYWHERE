@@ -7,7 +7,7 @@ import {serve} from "inngest/express";
 import {inngest,functions} from "./inngest/index.js"
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT||4000;
 
 await connectDB()
 
@@ -19,6 +19,7 @@ app.use(clerkMiddleware())
 
 //Api routes
 app.get('/',(req,res)=>res.send('Server is live!'))
-app.use('/api/inngest',serve({client:inngest,functions}))
+// app.use('/api/inngest',serve({client:inngest,functions}))
+app.use('/api/inngest',serve({client:inngest,functions:functions,signingKey:process.env.INNGEST_SIGNING_KEY}));
 
 app.listen(port,()=>console.log(`Server listening at http://localhost:${port}`));
